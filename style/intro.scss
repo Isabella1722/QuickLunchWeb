@@ -1,10 +1,11 @@
 *{ color: white; }
 
 body{
-    height: 100vh;
+    min-height: 100vh;
     background-image: url('../imgs/web_logo.png');
     background-size: cover;
     background-position: top;
+    background-repeat: no-repeat;
 }
 
 h3{
@@ -26,5 +27,29 @@ h3{
 
     button{
         margin-top: 20px;
+    }
+}
+
+.reg{
+    h3{
+        margin-top: 350px;
+        margin-bottom: 20px;
+    }
+
+    .row{
+        margin-top: 20px;
+        margin-bottom: 50px;
+        align-items: center;
+        justify-content: flex-start;
+        width: 400px;
+
+        input{
+            width: fit-content;
+            margin-right: 25px;
+        }
+
+        label{
+            font-size: 16px;
+        }
     }
 }

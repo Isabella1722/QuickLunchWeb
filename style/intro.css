@@ -3,10 +3,11 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   background-image: url("../imgs/web_logo.png");
   background-size: cover;
   background-position: top;
+  background-repeat: no-repeat;
 }
 
 h3 {
@@ -27,5 +28,33 @@ h3 {
 
 .init_sesion button {
   margin-top: 20px;
+}
+
+.reg h3 {
+  margin-top: 350px;
+  margin-bottom: 20px;
+}
+
+.reg .row {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 400px;
+}
+
+.reg .row input {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-right: 25px;
+}
+
+.reg .row label {
+  font-size: 16px;
 }
 /*# sourceMappingURL=intro.css.map */
