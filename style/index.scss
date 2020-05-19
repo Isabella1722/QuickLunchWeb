@@ -26,12 +26,28 @@ button{
     border: none;
     border-radius: 10px;
     color: #353535;
-}
 
+    &:hover{
+        opacity: .7;
+    }
+}
 
 .row{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+}
+
+input{
+    background: none;
+    border: none;
+    border-bottom: 1px solid #FFFFFF;
+    color: white;
+    margin-bottom: 10px;
+    width: 300px;
+
+    &::placeholder{
+        color: rgba(#FFFFFF, 0.25);
+    }
 }

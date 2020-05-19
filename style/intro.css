@@ -19,4 +19,13 @@ h3 {
 .row {
   width: 60%;
 }
+
+.init_sesion h3 {
+  margin-top: 250px;
+  margin-bottom: 20px;
+}
+
+.init_sesion button {
+  margin-top: 20px;
+}
 /*# sourceMappingURL=intro.css.map */

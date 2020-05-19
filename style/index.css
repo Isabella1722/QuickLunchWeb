@@ -38,6 +38,10 @@ button {
   color: #353535;
 }
 
+button:hover {
+  opacity: .7;
+}
+
 .row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -52,5 +56,30 @@ button {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+input {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #FFFFFF;
+  color: white;
+  margin-bottom: 10px;
+  width: 300px;
+}
+
+input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+input:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+input::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
 }
 /*# sourceMappingURL=index.css.map */
