@@ -16,4 +16,27 @@ var firebaseConfig = {
 
 
   //Instanciar
+
+  const iniciarBtn = document.getElementById("iniciarBtn");
+  const registrarBtn = document.getElementById("registrarBtn");
   const database = firebase.database();
+
+
+
+  iniciarBtn.addEventListener("click", function(){
+    
+    window.location.href="IniciarSesion.html";
+    
+  });
+
+
+  
+  registrarBtn.addEventListener("click", function(){
+    
+    window.location.href="Registro.html";
+    
+  });
+
+
+
+  

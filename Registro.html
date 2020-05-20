@@ -10,15 +10,24 @@
 <body class="reg">
     <h3>Bienvenido a Qlunch, atender pedidos<br/>nunca fue tan fácil y rápido¡</h3>
     
-    <input type="text" name="name" placeholder="Nombre y apellido">
-    <input type="text" name="doc" placeholder="Cédula">
-    <input type="text" name="cod" placeholder="Código de trabajo">
-    <input type="text" name="pas" placeholder="Contraseña">
-    <input type="text" name="ver_pas" placeholder="Verificar contraseña">
+    <input type="text" name="name" placeholder="Nombre y apellido" id="nombreIT">
+    <input type="text" name="doc" placeholder="Cédula" id="cedulaIT">
+    <input type="text" name="cod" placeholder="Código de trabajo" id="codigoTrabajoIT">
+    <input type="text" name="pas" placeholder="Contraseña" id="claveUnoIT">
+    <input type="text" name="ver_pas" placeholder="Verificar contraseña" id="claveDosIT">
 
     <div class="row round">
         <input type="checkbox" name="cond">
         <label>Acepto los términos y condiciones</label>
     </div>
+
+    <button id="registroBtn">Registrarse</button>
 </body>
+
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-database.js"></script>
+<script type="text/javascript" src="model/Usuario.js"></script>
+<script type="text/javascript" src="js/Registro.js"></script>
+<script type="text/javascript" src="js/Main.js"></script>
+
 </html>

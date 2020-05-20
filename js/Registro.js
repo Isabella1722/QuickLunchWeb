@@ -14,4 +14,25 @@ var firebaseConfig = {
 
 
   //Instanciar
+  const nombreIT = document.getElementById("nombreIT");
+  const cedulaIT = document.getElementById("cedulaIT");
+  const codigoTrabajoIT = document.getElementById("codigoTrabajoIT");
+  const claveUnoIT = document.getElementById("claveUnoIT");
+  const claveDosIT = document.getElementById("claveDosIT");
+  const registroBtn= document.getElementById("registroBtn");
   const database = firebase.database();
+
+  registroBtn.addEventListener("click", function(){
+
+    let nombre = nombreIT.value;
+    let cedula = cedulaIT.value;
+    let codigoTrabajo = codigoTrabajoIT.value;
+    let clave = claveUnoIT.value;
+
+    let id =database.ref().child("trabajadores").push().key;
+    let usuario = new Usuario(id, nombre, cedula, codigoTrabajo,clave); 
+    //console.log(usuario);
+    //REGISTRAR JUEGOS EN UNA RAMA 
+    database.ref().child("trabajadores").child(id).set(usuario);
+
+  });
