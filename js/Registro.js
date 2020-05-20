@@ -34,5 +34,6 @@ var firebaseConfig = {
     //console.log(usuario);
     //REGISTRAR JUEGOS EN UNA RAMA 
     database.ref().child("trabajadores").child(id).set(usuario);
+    window.location.href="Pedido.html";
 
   });

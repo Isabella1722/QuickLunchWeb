@@ -14,4 +14,16 @@ var firebaseConfig = {
 
 
   //Instanciar
+  const cedulaIT = document.getElementById("cedulaIT");
+  const claveIT = document.getElementById("claveIT");
+  const iniciarBtn = document.getElementById("iniciarBtn");
+
   const database = firebase.database();
+
+  iniciarBtn.addEventListener("click", function(){
+
+    
+
+
+    window.location.href="Pedido.html";
+  });
