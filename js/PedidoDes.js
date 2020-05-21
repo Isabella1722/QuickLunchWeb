@@ -5,7 +5,7 @@ var food = [
         bebida: 'Jugo de mora',
         postre: 'Tres leches'
     },
-
+    ///.agregar x platos
 ]
 
 var urlParams = new URLSearchParams(window.location.search);

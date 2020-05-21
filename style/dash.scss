@@ -22,9 +22,9 @@ h1{
 
 ul{
     align-self: flex-start;
-    list-style-image: url('../imgs/bullet.svg');
-
+    
     li{
+        list-style-image: url('../imgs/bullet.svg');
         font-family: 'Montserrat';
         font-size: 20px;
         line-height: 39px;
@@ -34,10 +34,18 @@ ul{
         &:hover{
             font-weight: 700;
         }
+
+        a{
+            text-decoration: none;
+        }
     }
 
-    .selected{
-        font-weight: 700;
+    .selected {
+        list-style-image: url('../imgs/bullet_check.svg');
+        a{
+            color: #303030;
+            font-weight: 700;
+        }
     }
 }
 
@@ -79,4 +87,17 @@ textarea{
 
 .end_ped{
     margin-top: 20px;
+}
+
+.final{
+    background-image: url('../imgs/finalBackground.svg');   
+    background-position: center;
+    p{
+        font-family: Montserrat;
+        font-weight: 300;
+        font-size: 35px;
+        text-align: center;
+        color: #303030;
+        margin-top: 220px;
+    }
 }

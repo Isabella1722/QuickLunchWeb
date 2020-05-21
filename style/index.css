@@ -97,4 +97,23 @@ input::placeholder {
 .user img {
   margin-right: 20px;
 }
+
+.menu {
+  position: absolute;
+  top: 90px;
+  right: 60px;
+  border: 1px solid #C4C4C4;
+  border-radius: 13px;
+  padding: 20px;
+}
+
+.menu p {
+  border-bottom: 1px solid #C4C4C4;
+  opacity: .4;
+}
+
+.menu p:last-child {
+  border: none;
+  opacity: 1;
+}
 /*# sourceMappingURL=index.css.map */
