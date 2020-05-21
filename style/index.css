@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;1,100;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap");
 * {
   font-family: 'Montserrat';
   font-style: normal;
@@ -25,6 +26,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 button {
@@ -81,5 +83,18 @@ input::-ms-input-placeholder {
 
 input::placeholder {
   color: rgba(255, 255, 255, 0.25);
+}
+
+.user {
+  position: absolute;
+  top: 50px;
+  right: 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.user img {
+  margin-right: 20px;
 }
 /*# sourceMappingURL=index.css.map */
