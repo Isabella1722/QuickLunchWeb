@@ -1,5 +1,4 @@
 
-
 var firebaseConfig = {
     apiKey: "AIzaSyD4F5NfFJYqwkmyboa0KnhBVH0W1tRp0c4",
     authDomain: "quicklunch-51d9a.firebaseapp.com",
