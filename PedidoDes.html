@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,30 +8,41 @@
     <link rel="stylesheet" href="style/index.css">
     <link rel="stylesheet" href="style/dash.css">
 </head>
-<body class="pedidos">
 
-    <div class="user row">
-        <img src="imgs/user.svg" alt="user">
-        <p>Rosa Contreras</p>
+<body class="pedidos">
+    <div id="opciones">
+        <div class="user row">
+            <img src="imgs/user.svg" alt="user">
+            <p id="nombreUsuario">Cargando...</p>
+        </div>
+            <p id = "cerrarSesion">Cerrar Sesión</p>
+        </div>
     </div>
 
     <img src="imgs/x.svg" id="x">
 
-    <h1 id="tit">titulo</h1>
-
     <div class="row pedido">
         <img src="" id="imgPed">
-        <div>
+        <div id = "infoPedido">
+            <h1 id="nombre">Cargando...</h1>
             <p id="des"></p>
             <p id="beb"></p>
             <p id="pos"></p>
+            <p id="est"></p>
+            <h3>Comentarios:</h3>
+            <p id="comentarios"></p>
+            <div id="botones">
+                <button id="end_ped">Pedido Terminado</button>
+                <button id="entregado">Pedido Entregado</button>
+            </div>  
         </div>
     </div>
 
-    <h3>Comentarios:</h3>
-    <textarea id=""></textarea>
-
-    <button class="end_ped">Pedido Terminado</button>
-    <script type="text/javascript" src="js/PedidoDes.js"></script>
 </body>
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-database.js"></script>
+<script type="text/javascript" src="model/Usuario.js"></script>
+<script type="text/javascript" src="model/Pedido.js"></script>
+<script type="text/javascript" src="js/PedidoDes.js"></script>
+
 </html>

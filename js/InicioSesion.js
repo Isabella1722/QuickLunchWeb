@@ -16,6 +16,7 @@ const cedulaIT = document.getElementById("cedulaIT");
 const claveIT = document.getElementById("claveIT");
 const iniciarBtn = document.getElementById("iniciarBtn");
 const database = firebase.database();
+const storage = window.localStorage;
 
 // Iniciar sesion
 iniciarBtn.addEventListener("click", function () {
@@ -37,6 +38,7 @@ iniciarBtn.addEventListener("click", function () {
     } else { 
       // Comprobar si la clave es correcta
       if (usuario.clave == clave.toString().trim()) {
+        storage.setItem("nombreStorage", usuario.nombre);
         window.location.href = "Pedido.html";
       } else {
         alert("La clave es incorrecta")

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,29 +8,28 @@
     <link rel="stylesheet" href="style/index.css">
     <link rel="stylesheet" href="style/dash.css">
 </head>
+
 <body class="pedidos">
 
-    <div class="user row">
-        <img src="imgs/user.svg" alt="user">
-        <p>Rosa Contreras</p>
-    </div>
-    <div class="menu">
-        <p>Editar Perfil</p>
-        <p>Modificar Menú</p>
-        <p>Cerrar Sesión</p>
+    <div id="opciones">
+        <div class="user row">
+            <img src="imgs/user.svg" alt="user">
+            <p id="usuario">Cargando...</p>
+        </div>
+            <p id = "cerrarSesion">Cerrar Sesión</p>
+        </div>
     </div>
 
+
     <h1>Pedidos</h1>
-    
-    <ul>
-        <li class="selected"><a href="PedidoDes.html?ped=pollocolombiano">Pollo Colombiano</a></li>
-        <li><a href="PedidoDes.html?ped=pollocolombiano">Pollo Colombiano</a></li>
-        <li><a href="PedidoDes.html?ped=albondigasitalianas"></a>Albondigas Italianas</a></li>
-        <li><a href="PedidoDes.html?ped=pastaoriental"></a>Pasta Oriental</a></li>
-        <li><a href="PedidoDes.html?ped=pastaconlangostinos"></a>Pasta con Langostinos</a></li>
-        <li><a href="PedidoDes.html?ped=polloalanaranja"></a>Pollo a la Naranja</a></li>
-        <li><a href="PedidoDes.html?ped=albondigasitalianas"></a>Albondigas Italianas</a></li>
-        <li><a href="PedidoDes.html?ped=pinchodepollo"></a>Pincho de pollo</a></li>
-    </ul>
+
+    <ol id="listaPedidos">
+    </ol>
 </body>
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-database.js"></script>
+<script type="text/javascript" src="model/Usuario.js"></script>
+<script type="text/javascript" src="model/Pedido.js"></script>
+<script type="text/javascript" src="js/PedidoRecibido.js"></script>
+
 </html>

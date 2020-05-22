@@ -1,19 +1,18 @@
-class Pedido{
+class Pedido {
 
-    constructor(id,idEstudiante, idPlato, nombreEstudiante, codigoEstudiante, nombrePlato, descripcion,bebida,postre,comentario){
-        this.id=id;
-        this.idEstudiante=idEstudiante;
-        this.idPlato=idPlato;
-        this.nombreEstudiante=nombreEstudiante;
-        this.nombrePlato=nombrePlato;
-        this.descripcion=descripcion;
-        this.bebida=bebida;
-        this.postre=postre;
-        this.comentario=comentario;
+    constructor(id, idEstudiante, idPlato, nombreEstudiante, codigoEstudiante, 
+        nombrePlato, descripcion, bebida, postre, comentario, estado) {
+        this.id = id;
+        this.idEstudiante = idEstudiante;
+        this.idPlato = idPlato;
+        this.nombreEstudiante = nombreEstudiante;
+        this.codigoEstudiante = codigoEstudiante;
+        this.nombrePlato = nombrePlato;
+        this.descripcion = descripcion;
+        this.bebida = bebida;
+        this.postre = postre;
+        this.comentario = comentario;
+        this.estado = estado;
     }
-
-
-
-
 
 }

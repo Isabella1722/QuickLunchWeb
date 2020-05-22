@@ -20,6 +20,7 @@ const claveDosIT = document.getElementById("claveDosIT");
 const condCheckBox = document.getElementById("condCheckBox");
 const registroBtn = document.getElementById("registroBtn");
 const database = firebase.database();
+const storage = window.localStorage;
 
 registroBtn.addEventListener("click", function () {
   let nombre = nombreIT.value;
@@ -55,6 +56,7 @@ registroBtn.addEventListener("click", function () {
       && codigoTrabajo != "" && clave != "" && condCheckBox.checked == true) {
       //REGISTRAR TRABAJADORES EN UNA RAMA 
       database.ref().child("trabajadores").child(id).set(usuario);
+      storage.setItem("nombreStorage", usuario.nombre);
       window.location.href = "Pedido.html";
 
     } else if (estaRegistrado == true) {
