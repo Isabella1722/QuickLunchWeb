@@ -29,6 +29,7 @@ const nombreStorage = storage.getItem("nombreStorage");
 
 nombreUsuario.innerHTML = nombreStorage;
 
+//Llamar la rama pedido para sacar los atributos de la descripción de cada uno
 database.ref().child("pedidos").child(idPedido).on("value", function (snapshot) {
     var pedidoObj = snapshot.val();
     var nombrePlato = pedidoObj.nombrePlato;
@@ -38,6 +39,7 @@ database.ref().child("pedidos").child(idPedido).on("value", function (snapshot) 
     var estado = pedidoObj.estado;
     var comentarios = pedidoObj.comentario;
 
+    //Colocarle la imagen correspondiente dependiendo del nombre del pedido
     switch (pedidoObj.nombrePlato) {
         case "Pollo colombiano":
             imgPed.src = "imgs/pollocolombiano.svg";
@@ -69,20 +71,24 @@ database.ref().child("pedidos").child(idPedido).on("value", function (snapshot) 
 
 });
 
+//Acción del botón para que el usuario cierre sesión y se mande al html del index
 cerrarSesion.addEventListener("click", function (event) {
     event.preventDefault();
     window.location.href = "/index.html";
 });
 
+//Acción del botón para que cuando el usuario le de click en la X se vaya al html de pedidos
 salir.addEventListener("click", function (event) {
     event.preventDefault();
     window.location.href = "/Pedido.html";
 });
 
+//Acción del botón para que el usuario le de click en pedido terminado e inmediatamente el estado del pedido pase de en espera a pedido listo
 terminadoBtn.addEventListener("click", function (event) {
     database.ref('pedidos/').child(idPedido).child("estado").set("Pedido listo");
 });
 
+//Acción del botón para que el usuario le de click en pedido entregado para que se elimine el pedido de la lista de los pedidos
 entregadoBtn.addEventListener("click", function (event) {
     database.ref('pedidos/').child(idPedido).remove();
     window.location.href = "/Pedido.html";

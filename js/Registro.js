@@ -22,6 +22,7 @@ const registroBtn = document.getElementById("registroBtn");
 const database = firebase.database();
 const storage = window.localStorage;
 
+//Acción del botón para registrar al usuario en la base de datos
 registroBtn.addEventListener("click", function () {
   let nombre = nombreIT.value;
   let cedula = cedulaIT.value;
