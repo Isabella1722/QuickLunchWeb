@@ -1,3 +1,9 @@
+var logged = localStorage.getItem('logged')
+
+if (logged == 'true') {
+  document.location.href = "Pedido.html"
+}
+
 var firebaseConfig = {
   apiKey: "AIzaSyD4F5NfFJYqwkmyboa0KnhBVH0W1tRp0c4",
   authDomain: "quicklunch-51d9a.firebaseapp.com",
@@ -35,9 +41,10 @@ iniciarBtn.addEventListener("click", function () {
     if (usuario == null) {
       alert("El usuario no está registrado");
 
-    } else { 
+    } else {
       // Comprobar si la clave es correcta
       if (usuario.clave == clave.toString().trim()) {
+        storage.setItem("logged", 'true');
         storage.setItem("nombreStorage", usuario.nombre);
         window.location.href = "Pedido.html";
       } else {

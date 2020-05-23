@@ -1,3 +1,9 @@
+var logged = localStorage.getItem('logged')
+
+if (logged == 'true') {
+  document.location.href = "Pedido.html"
+}
+
 var firebaseConfig = {
   apiKey: "AIzaSyD4F5NfFJYqwkmyboa0KnhBVH0W1tRp0c4",
   authDomain: "quicklunch-51d9a.firebaseapp.com",
@@ -57,6 +63,7 @@ registroBtn.addEventListener("click", function () {
       //REGISTRAR TRABAJADORES EN UNA RAMA 
       database.ref().child("trabajadores").child(id).set(usuario);
       storage.setItem("nombreStorage", usuario.nombre);
+      storage.setItem("logged", 'true');
       window.location.href = "Pedido.html";
 
     } else if (estaRegistrado == true) {

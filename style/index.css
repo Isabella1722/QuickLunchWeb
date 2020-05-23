@@ -44,6 +44,12 @@ button:hover {
   opacity: .7;
 }
 
+#finalBtn {
+  margin-top: 20px;
+  background: #353535; 
+  color: rgb(255, 255, 255);
+}
+
 #opciones {
   position: absolute;
   top: 100px;

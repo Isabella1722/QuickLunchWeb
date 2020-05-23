@@ -1,3 +1,9 @@
+var logged = localStorage.getItem('logged')
+
+if (logged == 'false') {
+    document.location.href = "index.html"
+}
+
 var firebaseConfig = {
     apiKey: "AIzaSyD4F5NfFJYqwkmyboa0KnhBVH0W1tRp0c4",
     authDomain: "quicklunch-51d9a.firebaseapp.com",
@@ -71,7 +77,8 @@ database.ref().child("pedidos").child(idPedido).on("value", function (snapshot) 
 
 cerrarSesion.addEventListener("click", function (event) {
     event.preventDefault();
-    window.location.href = "/index.html";
+    storage.setItem("logged", 'false');
+    window.location.href = "/final.html";
 });
 
 salir.addEventListener("click", function (event) {
@@ -80,10 +87,12 @@ salir.addEventListener("click", function (event) {
 });
 
 terminadoBtn.addEventListener("click", function (event) {
+    event.preventDefault();
     database.ref('pedidos/').child(idPedido).child("estado").set("Pedido listo");
 });
 
 entregadoBtn.addEventListener("click", function (event) {
+    event.preventDefault();
     database.ref('pedidos/').child(idPedido).remove();
     window.location.href = "/Pedido.html";
 });
