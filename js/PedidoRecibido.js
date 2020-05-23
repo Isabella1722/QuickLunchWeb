@@ -9,22 +9,28 @@ var firebaseConfig = {
   measurementId: "G-JXCJ14PVYZ"
 };
 
-// Initialize Firebase
+//Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+//Instanciar 
 const database = firebase.database();
 const usuario = document.getElementById("usuario");
 const listaPedidos = document.getElementById("listaPedidos");
 const storage = window.localStorage;
 const cerrarSesion = document.getElementById("cerrarSesion");
 const nombreStorage = storage.getItem("nombreStorage");
+const totalPedidos = document.getElementById("totalPedidos");
 
 usuario.innerHTML = nombreStorage;
 
+
+// Acción del botón para que el usuario cierre sesión y se mande al html del index
 cerrarSesion.addEventListener("click", function (event) {
   event.preventDefault();
   window.location.href = "/index.html";
 });
 
+//Llamar la rama pedido y agregarla a la lista de pedidos
 database.ref().child("pedidos").on("child_added", function (snapshot) {
   var pedidoObj = snapshot.val();
   var item = document.createElement("li");
@@ -41,4 +47,15 @@ database.ref().child("pedidos").on("child_added", function (snapshot) {
     storage.setItem("id", pedidoObj.id);
     window.location.href = "/PedidoDes.html";
   });
-})
+
+//Llamar a todos los elementos de la rama pedidos y contar los pedidos recibidos
+database.ref().child("pedidos").on("value",function(snapshot){
+  var numeroPedidos = snapshot.numChildren();
+  totalPedidos.innerHTML="Total de pedidos: "+numeroPedidos;
+  console.log(numeroPedidos);
+ });
+
+
+});
+
+ 

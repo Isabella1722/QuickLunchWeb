@@ -21,7 +21,7 @@ var firebaseConfig = {
   const database = firebase.database();
 
 
-
+  // Acción del botón para mandarlo al html de iniciar sesión
   iniciarBtn.addEventListener("click", function(){
     
     window.location.href="IniciarSesion.html";
@@ -29,7 +29,7 @@ var firebaseConfig = {
   });
 
 
-  
+  // Acción del botón para mandarlo al html de registrar
   registrarBtn.addEventListener("click", function(){
     
     window.location.href="Registro.html";

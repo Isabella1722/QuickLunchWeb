@@ -31,7 +31,7 @@ iniciarBtn.addEventListener("click", function () {
     snapshot.forEach(coincidencia => {
       usuario = coincidencia.val();
     });
-
+   //Condicionar el inicio de sesión
     if (usuario == null) {
       alert("El usuario no está registrado");
 

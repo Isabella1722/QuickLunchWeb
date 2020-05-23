@@ -33,7 +33,7 @@ registroBtn.addEventListener("click", function () {
 
   let estaRegistrado = false;
 
-  // Leer lista de trabajadores
+  //Leer lista de trabajadores
   database.ref().child("trabajadores").once('value', function (snapshot) {
 
     let lista = [];
@@ -42,7 +42,7 @@ registroBtn.addEventListener("click", function () {
       lista.push(registrado);
     });
 
-    // Comprobar si ya esta registrado
+    //Comprobar si ya esta registrado
     for (let i = 0; i < lista.length; i++) {
       let cedulaFb = lista[i].cedula;
 
@@ -54,11 +54,11 @@ registroBtn.addEventListener("click", function () {
 
     if (estaRegistrado == false && usuario.clave == confirmarClave && nombre != "" && cedula != ""
       && codigoTrabajo != "" && clave != "" && condCheckBox.checked == true) {
-      //REGISTRAR TRABAJADORES EN UNA RAMA 
+      //Registrar trabajadores en una rama
       database.ref().child("trabajadores").child(id).set(usuario);
       storage.setItem("nombreStorage", usuario.nombre);
       window.location.href = "Pedido.html";
-
+     //Condicionar el registro
     } else if (estaRegistrado == true) {
       alert("El usuario ya está registrado");
 
