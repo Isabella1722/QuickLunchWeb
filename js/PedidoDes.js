@@ -1,3 +1,4 @@
+// Comprobar si el usuario ha iniciado sesion
 var logged = localStorage.getItem('logged')
 
 if (logged == 'false') {

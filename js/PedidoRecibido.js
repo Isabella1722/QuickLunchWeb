@@ -1,3 +1,4 @@
+// Comprobar si el usuario ha iniciado sesion
 var logged = localStorage.getItem('logged')
 
 if (logged == 'false') {
@@ -57,14 +58,13 @@ database.ref().child("pedidos").on("child_added", function (snapshot) {
     window.location.href = "/PedidoDes.html";
   });
 
-//Llamar a todos los elementos de la rama pedidos y contar los pedidos recibidos
-database.ref().child("pedidos").on("value",function(snapshot){
-  var numeroPedidos = snapshot.numChildren();
-  totalPedidos.innerHTML="Total de pedidos: "+numeroPedidos;
-  console.log(numeroPedidos);
- });
+  //Llamar a todos los elementos de la rama pedidos y contar los pedidos recibidos
+  database.ref().child("pedidos").on("value", function (snapshot) {
+    var numeroPedidos = snapshot.numChildren();
+    totalPedidos.innerHTML = "Total de pedidos: " + numeroPedidos;
+    console.log(numeroPedidos);
+  });
 
 
 });
 
- 
