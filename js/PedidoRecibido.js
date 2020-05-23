@@ -1,3 +1,9 @@
+var logged = localStorage.getItem('logged')
+
+if (logged == 'false') {
+  document.location.href = "index.html"
+}
+
 var firebaseConfig = {
   apiKey: "AIzaSyD4F5NfFJYqwkmyboa0KnhBVH0W1tRp0c4",
   authDomain: "quicklunch-51d9a.firebaseapp.com",
@@ -20,6 +26,7 @@ const storage = window.localStorage;
 const cerrarSesion = document.getElementById("cerrarSesion");
 const nombreStorage = storage.getItem("nombreStorage");
 const totalPedidos = document.getElementById("totalPedidos");
+const tituloLista = document.getElementById("tituloLista");
 
 usuario.innerHTML = nombreStorage;
 
@@ -27,11 +34,13 @@ usuario.innerHTML = nombreStorage;
 // Acción del botón para que el usuario cierre sesión y se mande al html del index
 cerrarSesion.addEventListener("click", function (event) {
   event.preventDefault();
-  window.location.href = "/index.html";
+  storage.setItem("logged", 'false');
+  window.location.href = "/final.html";
 });
 
 //Llamar la rama pedido y agregarla a la lista de pedidos
 database.ref().child("pedidos").on("child_added", function (snapshot) {
+  tituloLista.innerHTML = "Pedidos"
   var pedidoObj = snapshot.val();
   var item = document.createElement("li");
   var enlace = document.createElement("a");
