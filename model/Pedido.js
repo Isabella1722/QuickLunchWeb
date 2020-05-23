@@ -1,7 +1,7 @@
 class Pedido {
 
     constructor(id, idEstudiante, idPlato, nombreEstudiante, codigoEstudiante, 
-        nombrePlato, descripcion, bebida, postre, comentario, estado) {
+        nombrePlato, descripcion, bebida, postre, comentario, estado, datetime) {
         this.id = id;
         this.idEstudiante = idEstudiante;
         this.idPlato = idPlato;
@@ -13,6 +13,7 @@ class Pedido {
         this.postre = postre;
         this.comentario = comentario;
         this.estado = estado;
+        this.datetime = datetime;
     }
 
 }

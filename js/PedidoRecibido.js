@@ -40,31 +40,54 @@ cerrarSesion.addEventListener("click", function (event) {
 });
 
 //Llamar la rama pedido y agregarla a la lista de pedidos
-database.ref().child("pedidos").on("child_added", function (snapshot) {
-  tituloLista.innerHTML = "Pedidos"
-  var pedidoObj = snapshot.val();
-  var item = document.createElement("li");
-  var enlace = document.createElement("a");
-  enlace.id = pedidoObj.id;
+var lista = [];
+database.ref().child("pedidos").on("value", function (snapshot) {
+  // Vaciar el arreglo y la ol para evitar que se dupliquen
+  lista.splice(0, lista.length);
+  // Remover li
+  var listaHtml = document.querySelectorAll(".pedidoLi");
+  for (let i = 0; i < listaHtml.length; i++) {
+    listaHtml[i].remove();
+  }
 
-  enlace.innerHTML = pedidoObj.nombrePlato + " - " + pedidoObj.id;
-  enlace.href = "#";
-  item.appendChild(enlace);
-  listaPedidos.appendChild(item);
-
-  document.getElementById(pedidoObj.id).addEventListener("click", function (event) {
-    event.preventDefault();
-    storage.setItem("id", pedidoObj.id);
-    window.location.href = "/PedidoDes.html";
+  // Recorrer lista de firebase
+  snapshot.forEach(dato => {
+    let pedido = dato.val();
+    lista.push(pedido);
   });
+
+  // Ordenar elementos por fecha
+  lista.sort(function compareNumbers(a, b) {
+    return a.datetime - b.datetime;
+  });
+
+
+  // Recorrer lista de pedidos
+  for (let i = 0; i < lista.length; i++) {
+    var item = document.createElement("li");
+    var enlace = document.createElement("a");
+    enlace.id = lista[i].id;
+    enlace.innerHTML = lista[i].nombrePlato + " - " + lista[i].id;
+    enlace.href = "#";
+
+    // Asignar clase a los li
+    item.className = "pedidoLi";
+    item.appendChild(enlace)
+    listaPedidos.appendChild(item);
+
+    // Abrir un pedido
+    document.getElementById(lista[i].id).addEventListener("click", function (event) {
+      event.preventDefault();
+      storage.setItem("id", lista[i].id);
+      window.location.href = "/PedidoDes.html";
+    });
+  }
 
   //Llamar a todos los elementos de la rama pedidos y contar los pedidos recibidos
   database.ref().child("pedidos").on("value", function (snapshot) {
     var numeroPedidos = snapshot.numChildren();
     totalPedidos.innerHTML = "Total de pedidos: " + numeroPedidos;
-    console.log(numeroPedidos);
   });
-
 
 });
 
